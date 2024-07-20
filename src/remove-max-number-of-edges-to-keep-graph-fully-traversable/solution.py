@@ -14,7 +14,6 @@ class Solution:
             if rowSum[row_index] == 0:
                 row_index += 1
             else:
-
                 col_index += 1
 
         return matrix
