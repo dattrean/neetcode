@@ -1,5 +1,5 @@
 class Solution:
-    def restoreMatrix(self, rowSum, colSum):
+    def restoreMatrix(self, rowSum: list[int], colSum: list[int]) -> list[list[int]]:
         N = len(rowSum)
         M = len(colSum)
 
@@ -18,6 +18,7 @@ class Solution:
                 j += 1
 
         return orig_matrix
+
 
 solution = Solution()
 print(solution.restoreMatrix([3, 8], [4, 7]))
