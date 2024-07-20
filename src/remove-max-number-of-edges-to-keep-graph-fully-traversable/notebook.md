@@ -56,7 +56,7 @@ To solve the problem of finding a matrix where the sums of the rows and columns 
 
 # Complexity
 - **Time complexity:** The time complexity of this solution is $O(m * n)$, where $m$ is the number of rows and n is the number of columns in the matrix. This is because we iterate through all cells of the matrix once to assign values based on the minimum of the current row and column sums.
-- **Space complexity:** The space complexity is $O( m * n)$ as well, as we create a matrix of size m*n to store the values.
+- **Space complexity:** The space complexity is $O( m * n)$ as well, as we create a matrix of size $m * n$ to store the values.
 
 # Code
 ```python
@@ -70,67 +70,6 @@ class Solution:
         # Loop through all cells of the matrix
         row_index, col_index = 0, 0
         while row_index < num_rows and col_index < num_cols:
-            # Set the current cell to the minimum of the current sums
-            matrix[row_index][col_index] = min(rowSum[row_index], colSum[col_index])
-
-            # Subtract the assigned value from both rowSum and colSum
-            rowSum[row_index] -= matrix[row_index][col_index]
-            colSum[col_index] -= matrix[row_index][col_index]
-
-            # Move to the next row if the current row sum is zero
-            # Move to the next column otherwise
-            if rowSum[row_index] == 0:
-                row_index += 1
-            else:
-                col_index += 1
-
-        # Return the matrix
-        return matrix
-```
-
-
-```python
-class Solution:
-    def restoreMatrix(self, rowSum: list[int], colSum: list[int]) -> list[list[int]]:
-        # Initialize the matrix with zeros
-        num_rows = len(rowSum)
-        num_cols = len(colSum)
-        matrix = [[0] * num_cols for _ in range(num_rows)]
-
-        # Loop through all cells of the matrix
-        row_index, col_index = 0, 0
-        while row_index < num_rows and col_index < num_cols:
-            # Set the current cell to the minimum of the current sums
-            matrix[row_index][col_index] = min(rowSum[row_index], colSum[col_index])
-
-            # Subtract the assigned value from both rowSum and colSum
-            rowSum[row_index] -= matrix[row_index][col_index]
-            colSum[col_index] -= matrix[row_index][col_index]
-
-            # Move to the next row if the current row sum is zero
-            # Move to the next column otherwise
-            if rowSum[row_index] == 0:
-                row_index += 1
-            else:
-                col_index += 1
-
-        # Return the matrix
-        return matrix
-```
-
-
-```python
-class Solution:
-    def restoreMatrix(self, rowSum: list[int], colSum: list[int]) -> list[list[int]]:
-        # Initialize the matrix with zeros
-        num_rows = len(rowSum)
-        num_cols = len(colSum)
-        matrix = [[0] * num_cols for _ in range(num_rows)]
-
-        # Loop through all cells of the matrix
-        row_index, col_index = 0, 0
-        while row_index < num_rows and col_index < num_cols:
-
             # Set the current cell to the minimum of the current sums
             matrix[row_index][col_index] = min(rowSum[row_index], colSum[col_index])
 

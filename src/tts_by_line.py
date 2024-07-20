@@ -13,7 +13,7 @@ def main(folder_name):
     client = OpenAI()
 
     # Path to the text file
-    solution_file_path = Path(__file__).parent / f"{folder_name}/solution.txt"
+    solution_file_path = Path(__file__).parent / f"{folder_name}/audios.txt"
     if not solution_file_path.is_file():
         print(f"Error: {solution_file_path} does not exist.")
         return
@@ -23,7 +23,7 @@ def main(folder_name):
         lines = file.readlines()
 
     # Path to save the MP3 files
-    base_path = Path(__file__).parent / f"{folder_name}/solution"
+    base_path = Path(__file__).parent / f"{folder_name}/audios"
     base_path.mkdir(parents=True, exist_ok=True)
 
     # Loop through each line and create a separate MP3 file
