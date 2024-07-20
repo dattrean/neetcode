@@ -5,6 +5,7 @@ import os
 import openai
 from dotenv import load_dotenv
 
+
 def main(folder_name):
     # Load the environment variables
     load_dotenv()
@@ -35,6 +36,7 @@ def main(folder_name):
             )
             response.stream_to_file(speech_file_path)
             print(f"Saved {speech_file_path}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
