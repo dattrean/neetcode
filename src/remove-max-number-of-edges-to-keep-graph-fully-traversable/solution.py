@@ -1,23 +1,23 @@
 class Solution:
     def restoreMatrix(self, rowSum: list[int], colSum: list[int]) -> list[list[int]]:
-        N = len(rowSum)
-        M = len(colSum)
+        num_rows = len(rowSum)
+        num_cols = len(colSum)
 
-        orig_matrix = [[0] * M for _ in range(N)]
-        i, j = 0, 0
+        matrix = [[0] * num_cols for _ in range(num_rows)]
+        row_index, col_index = 0, 0
 
-        while i < N and j < M:
-            orig_matrix[i][j] = min(rowSum[i], colSum[j])
+        while row_index < num_rows and col_index < num_cols:
+            matrix[row_index][col_index] = min(rowSum[row_index], colSum[col_index])
 
-            rowSum[i] -= orig_matrix[i][j]
-            colSum[j] -= orig_matrix[i][j]
+            rowSum[row_index] -= matrix[row_index][col_index]
+            colSum[col_index] -= matrix[row_index][col_index]
 
-            if rowSum[i] == 0:
-                i += 1
+            if rowSum[row_index] == 0:
+                row_index += 1
             else:
-                j += 1
+                col_index += 1
 
-        return orig_matrix
+        return matrix
 
 
 solution = Solution()
