@@ -1,3 +1,6 @@
+import heapq
+
+
 class Solution:
     def minimumCost(
         self,
@@ -7,8 +10,7 @@ class Solution:
         changed: list[str],
         cost: list[int],
     ) -> int:
-
-        adjacency_list = [[] for _ in range(26)]
+        adjacency_list: list[list[tuple[int, int]]] = [[] for _ in range(26)]
 
         conversion_count = len(original)
         for i in range(conversion_count):
@@ -31,11 +33,10 @@ class Solution:
         return total_cost
 
     def _dijkstra(
-        self, start_char: int, adjacency_list: list[list[tuple]]
+        self, start_char: int, adjacency_list: list[list[tuple[int, int]]]
     ) -> list[int]:
-
         priority_queue = [(0, start_char)]
-        min_costs = [float("inf")] * 26
+        min_costs = [10**9] * 26
 
         while priority_queue:
             current_cost, current_char = heapq.heappop(priority_queue)
