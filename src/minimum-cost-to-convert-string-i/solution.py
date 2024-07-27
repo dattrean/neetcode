@@ -11,7 +11,7 @@ class Solution:
         cost: list[int],
     ) -> int:
         # Graph Representation
-        # Create a graph with letter nodes and edges representing conversions with associated costs
+        # Create a graph of character conversions
         adjacency_list: list[list[tuple[int, int]]] = [[] for _ in range(26)]
 
         # Loop through all conversions
@@ -37,10 +37,10 @@ class Solution:
             character to all other characters.
             """
 
-            # Create a priority queue with the starting character and cost 0
+            # Create a priority queue to store characters with their conversion cost, sorted by cost
             priority_queue = [(0, start)]
 
-            # Create a list to hold the minimum cost to each character
+            # Create a list to store the minimum conversion cost to each character
             min_costs = [float("inf")] * 26
 
             # Process the priority queue
@@ -53,6 +53,7 @@ class Solution:
 
                 min_costs[current_char] = current_cost
 
+                # Explore all possible conversions from the current character
                 for target_char, conversion_cost in adjacencyList[current_char]:
                     new_total_cost = current_cost + conversion_cost
 
