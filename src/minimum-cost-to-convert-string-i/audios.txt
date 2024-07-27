@@ -1,10 +1,10 @@
-Intuition. Pour résoudre le problème de trouver le coût minimum pour convertir une chaîne à une autre en utilisant un ensemble de règles de conversion de caractères donnés, nous pouvons appliquer l'algorithme de `Dijkstra`. Tout d'abord, nous le modélisons comme un problème de traverse graphe où chaque caractère est un nœud, et chaque conversion entre les caractères représente une bordure dirigée et pondérée dans le graphe. Nous utilisons ensuite l'algorithme de `Dijkstra` pour trouver le chemin le plus court de chaque caractère de la chaîne source vers le caractère correspondant dans la chaîne cible en utilisant ces coûts de conversion.
+
 Approche. Représentation du graphe: Créer un graphe de conversions de caractères.
 Parcourir toutes les conversions:
 Obtenez les indices de caractères `original` et `changed` et leur coût de conversion.
 Ajouter les détails de la conversion au graphe.
-Calcul du chemin le plus court: Définir une fonction pour exécuter l'algorithme de `Dijkstra` pour trouver le coût minimum de la conversion d'un caractère à tous les autres caractères.
-Créer une file de priorité pour stocker les caractères avec leur coût de conversion, triés par coût.
+
+
 Créer une liste pour stocker le coût de conversion minimum pour chaque caractère.
 Traiter la file de priorité.
 Explorez toutes les conversions possibles du caractère actuel.
@@ -16,4 +16,4 @@ Calculer le coût de conversion si les caractères sont différents.
 Retourne moins un si la conversion n'est pas possible.
 Accumuler les coûts de conversion.
 Retourner le coût: Retourne le coût total de conversion minimum.
-Complexité. complexité temporelle: La complexité temporelle de cette solution est O de V carré, où  V est le nombre de sommets dans le graphe. C'est parce que nous utilisons l'algorithme de `Dijkstra` pour trouver le chemin le plus court du caractère source au caractère cible. Dans le pire des cas, nous devons peut-être visiter tous les sommets du graphe. Complexité spatiale: La complexité spatiale de cette solution est O de V plus E, où V est le nombre de sommets et E le nombre d'arêtes du graphe. C'est parce que nous stockons la représentation de la liste d'adjacence du graphe.
+
