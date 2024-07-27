@@ -37,5 +37,5 @@ jobs:
           VALIDATE_JSON: false
           VALIDATE_MARKDOWN: false
           VALIDATE_BASH: false
-          FILTER_REGEX_INCLUDE: src/remove-max-number-of-edges-to-keep-graph-fully-traversable/solution.py
+          FILTER_REGEX_INCLUDE: src/minimum-cost-to-convert-string-i/solution.py
 ...
