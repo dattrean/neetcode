@@ -1,12 +1,12 @@
 Intuition. Pour résoudre le problème de trouver le coût minimum pour convertir une chaîne à une autre en utilisant un ensemble de règles de conversion de caractères donnés, nous pouvons appliquer l'algorithme de Dijkstra. Tout d'abord, nous le modélisons comme un problème de traverse graphique où chaque caractère est un nœud, et chaque conversion entre les caractères représente une bordure dirigée et pondérée dans le graphique. Nous utilisons ensuite l'algorithme de Dijkstra pour trouver le chemin le plus court de chaque caractère de la chaîne source vers le caractère correspondant dans la chaîne cible en utilisant ces coûts de conversion.
 Approche. Représentation du graphique: Créer un graphique de conversions de caractères.
 Parcourir toutes les conversions:
-Obtenez les indices de caractères originaux et modifiés et leur coût de conversion.
+Obtenez les indices de caractères `original` et `changed` et leur coût de conversion.
 Ajouter les détails de la conversion au graphique.
 Calcul du chemin le plus court: Définir une fonction pour exécuter l'algorithme de Dijkstra pour trouver le coût minimum de la conversion d'un caractère à tous les autres caractères.
-Créer une queue de priorité pour stocker les caractères avec leur coût de conversion, triés par coût.
+Créer une file de priorité pour stocker les caractères avec leur coût de conversion, triés par coût.
 Créer une liste pour stocker le coût de conversion minimum pour chaque caractère.
-Traiter la queue de priorité.
+Traiter la file de priorité.
 Explorez toutes les conversions possibles du caractère actuel.
 Mettre à jour le coût s'il existe une conversion moins chère.
 Retourne la liste des coûts minimaux de conversion du caractère à tous les autres.
