@@ -10,21 +10,23 @@ class Solution:
         changed: list[str],
         cost: list[int],
     ) -> int:
-        # Initialize the graph
+        # Graph Representation
         # Create a graph with letter nodes and edges representing conversions with associated costs
         adjacency_list: list[list[tuple[int, int]]] = [[] for _ in range(26)]
 
-        # Populate the graph with the conversions
         # Loop through all conversions
         conversion_count = len(original)
         for conversion_index in range(conversion_count):
+
             # Get the source and target character indices and the cost of conversion
             source_char_index = ord(original[conversion_index]) - ord("a")
             target_char_index = ord(changed[conversion_index]) - ord("a")
             conversion_cost = cost[conversion_index]
-            # Append the conversion details to the adjacency list
+
+            # Append the conversion details to the graph
             adjacency_list[source_char_index].append((target_char_index, conversion_cost))
 
+        # Shortest Path Calculation
         def dijkstra(
             start: int, adjacencyList: list[list[tuple[int, int]]]
         ) -> list[float]:
@@ -51,6 +53,7 @@ class Solution:
             dijkstra(start_char, adjacency_list) for start_char in range(26)
         ]
 
+        # Cost Calculation
         total_cost = 0
         for s, t in zip(source, target):
             if s != t:
