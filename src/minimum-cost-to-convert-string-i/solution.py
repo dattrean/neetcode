@@ -48,16 +48,16 @@ class Solution:
                 current_cost, current_char = heapq.heappop(priority_queue)
                 if min_costs[current_char] != float("inf"):
                     continue
-                min_costs[current_char] = current_cost
 
                 # Explore all possible conversions from the current character
+                min_costs[current_char] = current_cost
                 for target_char, conversion_cost in adjacencyList[current_char]:
                     new_total_cost = current_cost + conversion_cost
 
                     # If we found a cheaper conversion, update its cost
                     if min_costs[target_char] == float("inf"):
                         heapq.heappush(priority_queue, (new_total_cost, target_char))
-            
+
             # Return the list of minimum conversion costs from the starting character to all others
             return min_costs
 
