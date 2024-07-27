@@ -10,6 +10,8 @@ class Solution:
         changed: list[str],
         cost: list[int],
     ) -> int:
+        
+        # Create a graph with letter nodes and edges representing conversions with associated costs
         adjacency_list: list[list[tuple[int, int]]] = [[] for _ in range(26)]
 
         conversion_count = len(original)
