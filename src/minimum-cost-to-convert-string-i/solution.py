@@ -3,6 +3,7 @@ import heapq
 
 class Solution:
     def minimumCost(self, source: str, target: str, original: list[str], changed: list[str], cost: list[int]) -> int:
+
         # Graph Representation
         # Create a graph of character conversions
         adjacency_list: list[list[tuple[int, int]]] = [[] for _ in range(26)]
@@ -26,8 +27,7 @@ class Solution:
             start: int, adjacencyList: list[list[tuple[int, int]]]
         ) -> list[float]:
             """
-            Perform Dijkstra's algorithm to find the minimum cost to convert the start
-            character to all other characters.
+            Perform Dijkstra's algorithm to find the minimum cost to convert a character to all other characters.
             """
 
             # Create a priority queue to store characters with their conversion cost, sorted by cost
@@ -77,5 +77,5 @@ class Solution:
                 # Add the conversion cost to the total cost
                 total_cost += int(char_conversion_cost)
 
-        # # Return the total conversion cost
+        # Return the total conversion cost
         return total_cost
