@@ -54,16 +54,20 @@ class Solution:
                 for target_char, conversion_cost in adjacencyList[current_char]:
                     new_total_cost = current_cost + conversion_cost
 
+                    # If we found a cheaper conversion, update its cost
                     if min_costs[target_char] == float("inf"):
                         heapq.heappush(priority_queue, (new_total_cost, target_char))
-
+            
+            # Return the list of minimum conversion costs from the starting character to all others
             return min_costs
 
+        # Calculate shortest paths for all possible character conversions
         min_conversion_costs = [
             dijkstra(start_char, adjacency_list) for start_char in range(26)
         ]
 
         # Cost Calculation
+        # Calculate the total cost of converting source to target
         total_cost = 0
         for s, t in zip(source, target):
             if s != t:
