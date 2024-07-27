@@ -46,11 +46,8 @@ class Solution:
             # Process the priority queue
             while priority_queue:
                 current_cost, current_char = heapq.heappop(priority_queue)
-
-                # Continue to the next iteration if the character has already been processed (its cost is not infinity)
                 if min_costs[current_char] != float("inf"):
                     continue
-
                 min_costs[current_char] = current_cost
 
                 # Explore all possible conversions from the current character
