@@ -18,10 +18,5 @@ Calculate the conversion cost from the characters if they are different.
 Return -1 if the conversion is not possible.
 Accumulate the conversion costs to get the total conversion cost.
 Return the cost: Return the total minimum conversion cost.
-Complexity
-Time complexity: The time complexity of this solution is O(V 
-2
- ), where V is the number of vertices in the graph. This is because we are using Dijkstra's algorithm to find the shortest path from the source character to the target character. In the worst case, we may need to iterate through all vertices in the graph.
-
-Space complexity: The space complexity of this solution is O(V+E), where V is the number of vertices and E is the number of edges in the graph. This is because we are storing the adjacency list representation of the graph, which requires O(V+E) space.
-
+Complexity Time complexity: The time complexity of this solution is big O of V square, where V is the number of vertices in the graph. This is because we are using Dijkstra's algorithm to find the shortest path from the source character to the target character. In the worst case, we may need to iterate through all vertices in the graph.
+Space complexity: The space complexity of this solution is big O of V plus E, where V is the number of vertices and E is the number of edges in the graph. This is because we are storing the adjacency list representation of the graph.
