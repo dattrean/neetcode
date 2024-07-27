@@ -12,7 +12,7 @@ class Solution:
         conversion_count = len(original)
         for conversion_index in range(conversion_count):
 
-            # Get the source and target character indices and the cost of conversion
+            # Get the original and changed character indices and the cost of conversion
             source_char_index = ord(original[conversion_index]) - ord("a")
             target_char_index = ord(changed[conversion_index]) - ord("a")
             conversion_cost = cost[conversion_index]
