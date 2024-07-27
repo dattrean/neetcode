@@ -2,14 +2,7 @@ import heapq
 
 
 class Solution:
-    def minimumCost(
-        self,
-        source: str,
-        target: str,
-        original: list[str],
-        changed: list[str],
-        cost: list[int],
-    ) -> int:
+    def minimumCost(self, source: str, target: str, original: list[str], changed: list[str], cost: list[int]) -> int:
         # Graph Representation
         # Create a graph of character conversions
         adjacency_list: list[list[tuple[int, int]]] = [[] for _ in range(26)]
@@ -67,15 +60,22 @@ class Solution:
         ]
 
         # Cost Calculation
-        # Calculate the total cost of converting source to target
+        # Loop through all pairs of characters from source and target strings
         total_cost = 0
         for s, t in zip(source, target):
+
+            # Calculate the conversion cost from character s to character t if the characters are different
             if s != t:
                 char_conversion_cost = min_conversion_costs[ord(s) - ord("a")][
                     ord(t) - ord("a")
                 ]
+
+                # Return -1 if the conversion is not possible
                 if char_conversion_cost == float("inf"):
                     return -1
+
+                # Add the conversion cost to the total cost
                 total_cost += int(char_conversion_cost)
 
+        # # Return the total conversion cost
         return total_cost
