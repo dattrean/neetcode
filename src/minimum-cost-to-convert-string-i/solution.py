@@ -24,15 +24,26 @@ class Solution:
             conversion_cost = cost[conversion_index]
 
             # Append the conversion details to the graph
-            adjacency_list[source_char_index].append((target_char_index, conversion_cost))
+            adjacency_list[source_char_index].append(
+                (target_char_index, conversion_cost)
+            )
 
         # Shortest Path Calculation
         def dijkstra(
             start: int, adjacencyList: list[list[tuple[int, int]]]
         ) -> list[float]:
+            """
+            Perform Dijkstra's algorithm to find the minimum cost to convert the start
+            character to all other characters.
+            """
+
+            # Create a priority queue with the starting character and cost 0
             priority_queue = [(0, start)]
+
+            # Create a list to hold the minimum cost to each character
             min_costs = [float("inf")] * 26
 
+            # Process the priority queue until empty
             while priority_queue:
                 current_cost, current_char = heapq.heappop(priority_queue)
 
