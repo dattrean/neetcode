@@ -1,19 +1,19 @@
 
-Approche. Représentation du graphe: Créer un graphe de conversions de caractères.
-Parcourir toutes les conversions:
+
+
 
 
 
 
 Créer une liste pour stocker le coût de conversion minimum pour chaque caractère.
 
-Explorez toutes les conversions possibles du caractère actuel.
 
-Retourne la liste des coûts minimaux de conversion du caractère à tous les autres.
-Calculer les chemins les plus courtes pour toutes les conversions de caractères possibles.
-Calcul des coûts: parcourir toutes les paires de caractères des chaînes source et cible:
+
+
+
+
 Calculer le coût de conversion si les caractères sont différents.
 
-Accumuler les coûts de conversion.
+
 Retourner le coût: Retourne le coût total de conversion minimum.
 
