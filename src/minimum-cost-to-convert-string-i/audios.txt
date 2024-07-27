@@ -12,7 +12,7 @@ Mettre à jour le coût s'il existe une conversion moins chère.
 Retourne la liste des coûts minimaux de conversion du caractère à tous les autres.
 Calculer les chemins les plus courtes pour toutes les conversions de caractères possibles.
 Calcul des coûts: parcourir toutes les paires de caractères des chaînes source et cible:
-Calculer le coût de conversion à partir des caractères s'ils sont différents.
+Calculer le coût de conversion si les caractères sont différents.
 Retourne moins un si la conversion n'est pas possible.
 Accumuler les coûts de conversion.
 Retourner le coût: Retourne le coût total de conversion minimum.
