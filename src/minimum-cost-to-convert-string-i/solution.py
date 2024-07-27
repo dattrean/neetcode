@@ -10,15 +10,19 @@ class Solution:
         changed: list[str],
         cost: list[int],
     ) -> int:
-        
+        # Initialize
         # Create a graph with letter nodes and edges representing conversions with associated costs
         adjacency_list: list[list[tuple[int, int]]] = [[] for _ in range(26)]
 
+        # Populate the graph with the conversions
         conversion_count = len(original)
         for conversion_index in range(conversion_count):
-            adjacency_list[ord(original[conversion_index]) - ord("a")].append(
-                (ord(changed[conversion_index]) - ord("a"), cost[conversion_index])
-            )
+            # Get the source and target character indices and the cost of conversion
+            source_char_index = ord(original[conversion_index]) - ord("a")
+            target_char_index = ord(changed[conversion_index]) - ord("a")
+            conversion_cost = cost[conversion_index]
+            # Append the conversion details to the adjacency list
+            adjacency_list[source_char_index].append((target_char_index, conversion_cost))
 
         def dijkstra(
             start: int, adjacencyList: list[list[tuple[int, int]]]
