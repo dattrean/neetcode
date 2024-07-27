@@ -10,11 +10,12 @@ class Solution:
         changed: list[str],
         cost: list[int],
     ) -> int:
-        # Initialize
+        # Initialize the graph
         # Create a graph with letter nodes and edges representing conversions with associated costs
         adjacency_list: list[list[tuple[int, int]]] = [[] for _ in range(26)]
 
         # Populate the graph with the conversions
+        # Loop through all conversions
         conversion_count = len(original)
         for conversion_index in range(conversion_count):
             # Get the source and target character indices and the cost of conversion
