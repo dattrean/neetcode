@@ -34,9 +34,9 @@ class Solution:
 
     def _dijkstra(
         self, start_char: int, adjacency_list: list[list[tuple[int, int]]]
-    ) -> list[int]:
+    ) -> list[float]:
         priority_queue = [(0, start_char)]
-        min_costs = [10**9] * 26
+        min_costs = [float("inf")] * 26
 
         while priority_queue:
             current_cost, current_char = heapq.heappop(priority_queue)
