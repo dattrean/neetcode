@@ -28,7 +28,7 @@ class Solution:
                 ]
                 if char_conversion_cost == float("inf"):
                     return -1
-                total_cost += char_conversion_cost
+                total_cost += int(char_conversion_cost)
 
         return total_cost
 
