@@ -19,7 +19,7 @@ class Solution:
             )
 
         def dijkstra(
-            start: int, adjacency_list: list[list[tuple[int, int]]]
+            start: int, adjacencyList: list[list[tuple[int, int]]]
         ) -> list[float]:
             priority_queue = [(0, start)]
             min_costs = [float("inf")] * 26
@@ -32,7 +32,7 @@ class Solution:
 
                 min_costs[current_char] = current_cost
 
-                for target_char, conversion_cost in adjacency_list[current_char]:
+                for target_char, conversion_cost in adjacencyList[current_char]:
                     new_total_cost = current_cost + conversion_cost
 
                     if min_costs[target_char] == float("inf"):
