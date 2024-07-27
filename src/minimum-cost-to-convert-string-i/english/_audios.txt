@@ -4,19 +4,17 @@ Approach. Graph Representation: Create a graph of character conversions.
 Loop through all conversions:
 Get the original and changed character indices and their conversion cost.
 Append the conversion details to the graph.
-Shortest Path Calculation:
-Define a function to perform Dijkstra's algorithm to find the minimum cost of converting a character to all other characters.
+Shortest Path Calculation: Define a function to perform Dijkstra's algorithm to find the minimum cost of converting a character to all other characters.
 Create a priority queue to store characters with their conversion cost, sorted by cost.
 Create a list to store the minimum conversion cost for each character.
 Process the priority queue.
 Explore all possible conversions from the current character.
 Update the cost if there is a cheaper conversion.
-Return the list of minimum conversion costs from the starting character to all others.
+Return the list of minimum conversion costs from the character to all others.
 Calculate shortest paths for all possible character conversions.
 Cost Calculation: Loop through all pairs of characters from source and target strings:
 Calculate the conversion cost from the characters if they are different.
-Return -1 if the conversion is not possible.
-Accumulate the conversion costs to get the total conversion cost.
+Return minus one if the conversion is not possible.
+Accumulate the conversion costs.
 Return the cost: Return the total minimum conversion cost.
-Complexity Time complexity: The time complexity of this solution is big O of V square, where V is the number of vertices in the graph. This is because we are using Dijkstra's algorithm to find the shortest path from the source character to the target character. In the worst case, we may need to iterate through all vertices in the graph.
-Space complexity: The space complexity of this solution is big O of V plus E, where V is the number of vertices and E is the number of edges in the graph. This is because we are storing the adjacency list representation of the graph.
+Complexity Time complexity: The time complexity of this solution is O of V square, where V is the number of vertices in the graph. This is because we are using Dijkstra's algorithm to find the shortest path from the source character to the target character. In the worst case, we may need to iterate through all vertices in the graph. Space complexity: The space complexity of this solution is O of V plus E, where V is the number of vertices and E is the number of edges in the graph. This is because we are storing the adjacency list representation of the graph.
