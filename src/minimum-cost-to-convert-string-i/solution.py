@@ -43,10 +43,11 @@ class Solution:
             # Create a list to hold the minimum cost to each character
             min_costs = [float("inf")] * 26
 
-            # Process the priority queue until empty
+            # Process the priority queue
             while priority_queue:
                 current_cost, current_char = heapq.heappop(priority_queue)
 
+                # Continue to the next iteration if the character has already been processed (its cost is not infinity)
                 if min_costs[current_char] != float("inf"):
                     continue
 
