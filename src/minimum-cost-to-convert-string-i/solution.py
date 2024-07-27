@@ -13,12 +13,12 @@ class Solution:
         adjacency_list: list[list[tuple[int, int]]] = [[] for _ in range(26)]
 
         conversion_count = len(original)
-        for i in range(conversion_count):
-            adjacency_list[ord(original[i]) - ord("a")].append(
-                (ord(changed[i]) - ord("a"), cost[i])
+        for conversion_index in range(conversion_count):
+            adjacency_list[ord(original[conversion_index]) - ord("a")].append(
+                (ord(changed[conversion_index]) - ord("a"), cost[conversion_index])
             )
 
-        min_conversion_costs = [self._dijkstra(i, adjacency_list) for i in range(26)]
+        min_conversion_costs = [self.dijkstra(start_char, adjacency_list) for start_char in range(26)]
 
         total_cost = 0
         for s, t in zip(source, target):
@@ -32,10 +32,10 @@ class Solution:
 
         return total_cost
 
-    def _dijkstra(
-        self, start_char: int, adjacency_list: list[list[tuple[int, int]]]
+    def dijkstra(
+        self, start: int, adjacency_list: list[list[tuple[int, int]]]
     ) -> list[float]:
-        priority_queue = [(0, start_char)]
+        priority_queue = [(0, start)]
         min_costs = [float("inf")] * 26
 
         while priority_queue:
