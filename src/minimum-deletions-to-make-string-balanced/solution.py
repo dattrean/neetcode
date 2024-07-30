@@ -8,6 +8,9 @@ class Solution:
 
         # Loop through all characters in `s`
         for character in s:
+
+            # Pop the top element of the stack and increment the delete count
+            # if the stack is not empty and the current character is a and the top of the stack is b
             if stack and character == "a" and stack[-1] == "b":
                 stack.pop()
                 delete_count += 1
