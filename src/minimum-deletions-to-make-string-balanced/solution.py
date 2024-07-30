@@ -14,7 +14,9 @@ class Solution:
             if stack and character == "a" and stack[-1] == "b":
                 stack.pop()
                 delete_count += 1
+            # Otherwise, push the current character onto the stack
             else:
                 stack.append(character)
 
+        # Return the total number of deletions
         return delete_count
