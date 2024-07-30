@@ -4,7 +4,7 @@ stack = []
 
 
 for character in s:
-    if character and character[-1] == "b" and character == "a":
+    if character and character[-1] == "b":
         stack.pop()
     else:
         stack.append(character)
