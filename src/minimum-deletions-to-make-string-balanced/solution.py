@@ -1,13 +1,13 @@
 class Solution:
     def minimumDeletions(self, s: str) -> int:
         stack: list[str] = []
-        count = 0
+        delete_count = 0
 
         for character in s:
             if stack and character == "a" and stack[-1] == "b":
                 stack.pop()
-                count += 1
+                delete_count += 1
             else:
                 stack.append(character)
 
-        return count
+        return delete_count
