@@ -1,6 +1,6 @@
 class Solution:
     def minimumDeletions(self, s: str) -> int:
-        stack = []
+        stack: list[str] = []
         count = 0
 
         for character in s:
